@@ -41,14 +41,14 @@ export function LeadCard({ lead, onClick, compact = false }: LeadCardProps) {
             <div className={cn('w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold', getScoreColor(lead.score))}>
               {lead.score}
             </div>
-            {classification && (
-              <span className={cn(
-                'text-xs font-bold px-2 py-0.5 rounded border',
-                CLASSIFICATION_COLORS[classification]
-              )}>
-                {CLASSIFICATION_LABELS[classification]}
-              </span>
-            )}
+           {classification && (
+  <span className={cn(
+    'text-xs font-bold px-2 py-0.5 rounded border',
+    CLASSIFICATION_COLORS[classification] || 'bg-gray-100 text-gray-800 border-gray-200'
+  )}>
+    {CLASSIFICATION_LABELS[classification] || classification}
+  </span>
+)}
           </div>
         </div>
 
