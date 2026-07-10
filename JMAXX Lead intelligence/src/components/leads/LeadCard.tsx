@@ -112,13 +112,13 @@ export function LeadCardCompact({ lead, onClick }: LeadCardProps) {
         </div>
         <div className="flex items-center gap-2">
           {classification && (
-            <span className={cn(
-              'text-xs font-bold px-2 py-0.5 rounded',
-              CLASSIFICATION_COLORS[classification]
-            )}>
-              {CLASSIFICATION_LABELS[classification]}
-            </span>
-          )}
+  <span className={cn(
+    'text-xs font-bold px-2 py-0.5 rounded',
+    CLASSIFICATION_COLORS[classification] || 'bg-gray-100 text-gray-800'
+  )}>
+    {CLASSIFICATION_LABELS[classification] || classification}
+  </span>
+)}
           <Badge variant="default" size="sm">{lead.source}</Badge>
         </div>
       </div>
